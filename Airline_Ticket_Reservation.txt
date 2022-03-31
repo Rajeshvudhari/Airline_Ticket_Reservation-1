@@ -1,0 +1,159 @@
+package package3 ;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;  
+import java.util.*;
+import java.io.*;
+public class Login_page {
+
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+         String sp=" ";
+        System.out.println("Enter the Username");
+        String uname = sc.nextLine(); //Rajashekar contains "  "
+        if((uname.contains(sp))){
+            System.err.println("Invalid Username");
+           // return;
+        }
+
+        System.out.println("Enter the Password");
+        String upass = sc.nextLine();
+        if((upass.contains(sp))){
+            System.err.println("Invalid Password");
+            return;
+        }
+        System.out.println(uname+" you are Registered Successfully");
+
+        System.out.println("Enter the Username");
+        String lname = sc.nextLine();
+        System.out.println("Enter the Password");
+        String lpass = sc.nextLine();
+
+        if(uname.equals(lname) && upass.equals(lpass)){
+        	            System.out.println("Welcome "+lname+" you have Logged-in Successfully");
+                          DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+                                            LocalDateTime a = LocalDateTime.now();
+                                             System.out.println(dtf.format(a));
+                                             System.err.println("-------Welocme to RAJASHEKAR AIR LINE TICKET BOOKING SYSTEM---------");
+                                             System.out.println("----------------Enter Flight Information----------------- ");
+                                                 int FN, c;
+                                                 double op;
+                                                 String origin, destination, dt;
+                                                 Scanner scan1 = new Scanner(System.in);
+                                                 Scanner scan2 = new Scanner(System.in);
+                                                 Scanner scan3 = new Scanner(System.in);
+                                                 Scanner scan4 = new Scanner(System.in);
+
+                                                 System.out.println("Enter flight Number");
+                                                 FN = scan1.nextInt();
+                                                 System.out.println("Enter flight origin");
+                                                 origin = scan2.nextLine();
+
+                                                System.out.println("Enter flight destination");
+                                                 destination = scan2.nextLine();
+                                                 System.out.println("Enter flight departure time and date");
+                                                 dt = scan2.nextLine();
+                                                 System.out.println("Enter flight capacity");
+                                                 c = scan1.nextInt();
+                                                 System.out.println("Enter original price of ticket");
+                                                 op = scan3.nextDouble();
+                                                 
+                                                 System.out.println("The following flight has been created:");
+                                               
+                                               System.out.println();
+                                               //int myInput;	// declaring variable to get input for the menu options
+
+                                       			
+                                       		
+                                       			System.err.println("	***********************************************************	");	// displaying the line of astericks for beauty of our code
+                                       			System.err.println("	*	      WELCOME TO FLIGHT RESERVATION SYSTEM	  *	");	// displaying welcome message to the users
+                                       			System.err.println("	***********************************************************	");
+                                       			System.out.println("	|							  | ");
+                                       			System.out.println("	|							  |	");
+                                       			System.out.println("	------------------- MAIN MENU -----------------------------	");	// displaying heading for the main menu
+                                       			System.out.println("");
+                                       			System.out.println("    	......    1.   Book Flight   			......");	// Option to book flight flights.
+                                       			System.out.println("	......    2.   Cancel Flight			......	");	// Option to cancel the flight
+                                       			System.out.println("    	......    3.   Search for Flights             	......");	// Option to search for the flight
+                                       			System.out.println("	......    4.   Search for Reservation Details	......");	// Option to get information
+                                       			System.out.println("        ......    5.   Exit System                      ......");	// Option to get out of the system.
+                                       		
+                                       			System.out.println("");	// printing a new line for an extra space.
+                                       			System.out.println("	~~~ Enter The Number Of The Menu You Wish To Follow !     ");
+                                       			// message asking users to select a choice
+                                       			System.out.println("**************   Enter The Input   *********");
+                                       		 int myInput;
+                                       			  myInput=scan1.nextInt();	// prompt for the menu choices
+                                       		
+                                       			if(myInput == 1)
+                                       			{
+                                                    System.out.println("All Available Flights Today is ="+ origin +"--------------"+ destination);
+                                                     System.out.println("Enter Your Full Name");
+                                                     String name=  scan2.nextLine();
+                                       				  System.out.println("Enter Your Phone Number");
+                                       				long PhoneNo=  scan4.nextLong();
+                                                   
+                                                    System.out.println(" how many Ticket reqired For you");
+                                                    Byte Ticket =  scan4.nextByte();
+                                                    System.out.println("Succesfully Booked your Tickets"+"\n Name: "+name+"\n   Phone No:"+PhoneNo+"\n  TotelTickedBooked :"+Ticket);
+                                                    System.out.println();
+                                                   System.err.println("Your Ticked booking Confimed ======> HAPPY JOURNY <======="+ origin +"--------------"+ destination);
+                                       			}
+                                       			System.out.println();
+                                       			System.out.println("**************   Enter The Input   *********");
+
+                                       		  myInput=scan1.nextInt();
+                                       			if(myInput == 2)
+                                       			{
+                                       			  System.out.println("Enter Your Full Name");
+                                                  String name=  scan2.nextLine();
+                                    				  System.out.println("Enter Your Phone Number");
+                                    				long PhoneNo=  scan4.nextLong();
+                                                
+                                                 System.out.println(" how many Ticket Cancel  For you");
+                                                 Byte Ticket =  scan4.nextByte();
+                                                 System.out.println("Succesfully Cancel your Tickets"+"\n Name: "+name+"\n   Phone No:"+PhoneNo+"\n  TotelTickedBooked :"+Ticket);
+                                                System.err.println("Your Tickets Has been  Cancelled");	
+                                       			}
+                                       			System.out.println("**************   Enter The Input   *********");
+
+                                       		  myInput=scan1.nextInt();
+                                       			if(myInput == 3)
+                                       			{
+                                                    System.out.println("All Available Flights Today is ="+ origin +"--------------"+ destination);
+
+                                      			}
+                                       			
+                                       			System.out.println("**************   Enter The Input   *********");
+
+                                       		  myInput=scan1.nextInt();
+                                       			if(myInput == 4)
+                                       			{
+                                       			 System.out.println("Enter Your Full Name");
+                                                 String name=  scan2.nextLine();
+                                   				  System.out.println("Enter Your Phone Number");
+                                   				long PhoneNo=  scan4.nextLong();
+                                   				Byte Ticket =  scan4.nextByte();
+                                   			                                              
+                                                System.out.println("Succesfully Booked your Tickets"+"\n Name: "+name+"\n   Phone No:"+PhoneNo+"\n  TotelTickedBooked :"+Ticket);
+                                               System.err.println("Your Ticked booking Confimed ======> HAPPY JOURNY <======="+ origin +"--------------"+ destination);
+
+                                       			}
+                                       			System.out.println("**************   Enter The Input   *********");
+
+                                       		  myInput=scan1.nextInt();
+                                       			if(myInput == 5)
+                                       			{
+                                                      System.out.println("------------------------ THANK YOU FOR VISITING OUR  RAJASHEKAR AIR LINE BOOKING SYSTEM------------------");
+                                       			}
+                                       			
+
+                                       		}                                       	
+            
+        
+        else{
+            System.err.println("Username or password Mismatch");
+        }
+    }
+
+
+}
